@@ -10,10 +10,12 @@ class App extends Component {
     }
   }
 
-  handleGameplay = (index) => [
-    alert(index)
+  handleGamePlay = (index) => {
+    const { board }  = this.state
+    board[index] = "🌲"
+    this.setState({board: board})
 
-  ]
+}
 
   render() {
     return(
@@ -26,7 +28,7 @@ class App extends Component {
             value={value} 
             key={index} 
             index={index}
-            handleGameplay={this.handleGameplay}
+            handleGamePlay={this.handleGamePlay}
           />
           )
         })}
